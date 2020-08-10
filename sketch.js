@@ -21,13 +21,13 @@ function setup() {
 
 	
 
-	rec1=createSprite(930,730,20,100)
+	rec1=new dustbin(930,730,100,20)
 	rec1.shapeColor="red"
 
-	rec2=createSprite(1040,770,200,20)
+	rec2=new dustbin(1040,770,20,200)
 	rec2.shapeColor="red"
 
-	rec3=createSprite(1150,730,20,100)
+	rec3=new dustbin(1150,730,100,20)
 	rec3.shapeColor="red"
 
 	paperball=new paper(10,680,20)
@@ -48,6 +48,9 @@ function draw() {
   rect(ground.position.x,ground.position.y,1200,20);
   
   paperball.display();
+  rec1.display()
+  rec2.display() 
+  rec3.display()
  
   drawSprites();
  
@@ -56,8 +59,8 @@ function draw() {
 function keyPressed() {
     
     if (keyCode === UP_ARROW && tmp===0 ){
-		//Matter.Body.setVelocity( paperball.body, {x: 2, y: -2});
-Matter.Body.applyForce(paperball.body,paperball.body.position,{x:85,y:-85});
+	
+Matter.Body.applyForce(paperball.body,paperball.body.position,{x:79,y:-79});
 tmp=1
     }
 }
